@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group([
+	'prefix' => 'post',
+], function () {
+	Route::get('/', '\App\Http\Controllers\PostController@index');
+	Route::post('/', '\App\Http\Controllers\PostController@store');
+	Route::patch('/{post}', '\App\Http\Controllers\PostController@update');
+	Route::delete('/{post}', '\App\Http\Controllers\PostController@destroy');
 });
