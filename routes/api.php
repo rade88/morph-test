@@ -19,6 +19,6 @@ Route::group([
 ], function () {
 	Route::get('/', '\App\Http\Controllers\PostController@index');
 	Route::post('/', '\App\Http\Controllers\PostController@store');
-	Route::patch('/{post}', '\App\Http\Controllers\PostController@update');
+	Route::put('/{post}', '\App\Http\Controllers\PostController@update');
 	Route::delete('/{post}', '\App\Http\Controllers\PostController@destroy');
 });
